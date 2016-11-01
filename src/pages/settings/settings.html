@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="settings">
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col width-100 >
+        <ion-list>
+          <ion-item>
+            <ion-label fixed>Enter City</ion-label>
+            <ion-input (keyup)="getQuery()" [(ngModel)]="searchStr" name="search" type="text" value=""></ion-input>
+          </ion-item>
+          <p class="current">Current: {{defaultCity}}</p>
+
+        </ion-list>
+
+        <ion-list>
+          <ion-item *ngFor="let result of results"><span (click)="chooseDefaultCity(result)">{{result.name}}</span></ion-item>
+        </ion-list>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+</ion-content>
